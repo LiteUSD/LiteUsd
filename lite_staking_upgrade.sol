@@ -82,9 +82,9 @@ interface IStaking is StakeInfo {
 
     function totalPendingReward() external view returns (uint256);
 
-    function lastBonusEpoch() external view returns (uint256);
+    function lastBounsEpoch() external view returns (uint256);
 
-    function lastBonusToken() external view returns (uint256);
+    function lastBounsToken() external view returns (uint256);
 }
 
 contract LiteStaking is StakeInfo {
@@ -152,8 +152,8 @@ contract LiteStaking is StakeInfo {
         totalReward = IStaking(upgradeAddress).totalReward();
         totalUsedReward = IStaking(upgradeAddress).totalUsedReward();
         totalPendingReward = IStaking(upgradeAddress).totalPendingReward();
-        lastBonusEpoch = IStaking(upgradeAddress).lastBonusEpoch();
-        lastBonusToken = IStaking(upgradeAddress).lastBonusToken();
+        lastBonusEpoch = IStaking(upgradeAddress).lastBounsEpoch();
+        lastBonusToken = IStaking(upgradeAddress).lastBounsToken();
 
         uint256 length = IStaking(upgradeAddress).poolLength();
         for (uint256 i = 0; i < length; i++) {
